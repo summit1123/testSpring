@@ -1,77 +1,273 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WhaleRay Test App</title>
+    <title>SoftBank x WhaleRay</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #f5f5f5;
+            font-family: 'Noto Sans KR', sans-serif;
+            background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
         }
+        
         .container {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #2c3e50;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             text-align: center;
+            max-width: 500px;
+            width: 90%;
+            animation: slideIn 1s ease-out;
         }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .logo-section {
+            margin-bottom: 30px;
+        }
+        
+        .softbank-logo {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #FF6B6B;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .whale-emoji {
+            font-size: 4rem;
+            margin: 20px 0;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-15px);
+            }
+            60% {
+                transform: translateY(-7px);
+            }
+        }
+        
         .status {
-            background: #d4edda;
-            border: 1px solid #c3e6cb;
-            color: #155724;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
+            background: linear-gradient(135deg, #A8E6CF, #7FCDCD);
+            color: #2C5530;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 25px 0;
+            font-weight: 500;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
         }
-        .links {
-            margin: 20px 0;
-        }
-        .links a {
-            display: inline-block;
-            background: #007bff;
+        
+        .magic-button {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
             color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 5px 10px 5px 0;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+            margin: 20px 0;
+            font-family: 'Noto Sans KR', sans-serif;
+            transform: scale(1);
         }
-        .links a:hover {
-            background: #0056b3;
+        
+        .magic-button:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 15px 25px rgba(255, 107, 107, 0.4);
+        }
+        
+        .magic-button:active {
+            transform: scale(0.98);
+        }
+        
+        .result {
+            margin-top: 30px;
+            padding: 25px;
+            background: linear-gradient(135deg, #FFE4E1, #FFD1DC);
+            border-radius: 20px;
+            border-left: 6px solid #FF6B6B;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #8B0000;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+        
+        .result.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .heart {
+            color: #FF6B6B;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            margin: 0 10px;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .footer {
+            margin-top: 30px;
+            color: #666;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #FFD700;
+            border-radius: 50%;
+            animation: sparkle 2s linear infinite;
+        }
+        
+        @keyframes sparkle {
+            0% {
+                opacity: 0;
+                transform: translateY(0) scale(0);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-100px) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-200px) scale(0);
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>🐋 WhaleRay Spring Boot Application</h1>
+        <div class="logo-section">
+            <div class="softbank-logo">SoftBank</div>
+            <div class="whale-emoji">🐋</div>
+        </div>
         
         <div class="status">
-            <strong>✅ 배포 성공!</strong><br>
-            Spring Boot 애플리케이션이 정상적으로 실행 중입니다.
+            <strong>🎉 배포 완료!</strong><br>
+            WhaleRay 시스템이 성공적으로 실행 중입니다
         </div>
         
-        <h3>사용 가능한 서비스:</h3>
-        <div class="links">
-            <a href="/hello">Hello API</a>
-            <a href="/actuator/health">Health Check</a>
+        <button class="magic-button" onclick="callMagicAPI()">
+            ✨ 소프트뱅크 ✨
+        </button>
+        
+        <div class="result" id="apiResult">
+            버튼을 클릭해보세요! 🎯
         </div>
         
-        <h3>애플리케이션 정보:</h3>
-        <ul>
-            <li>Framework: Spring Boot</li>
-            <li>Port: 8080</li>
-            <li>Environment: Production Ready</li>
-        </ul>
-        
-        <footer style="text-align: center; margin-top: 30px; color: #666;">
-            <small>Powered by WhaleRay Deployment System</small>
-        </footer>
+        <div class="footer">
+            <small>💝 Powered by SoftBank x WhaleRay Deployment System</small>
+        </div>
     </div>
+
+    <script>
+        function callMagicAPI() {
+            const resultDiv = document.getElementById('apiResult');
+            const button = document.querySelector('.magic-button');
+            
+            // 버튼 애니메이션
+            button.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                button.style.transform = 'scale(1)';
+            }, 150);
+            
+            // 로딩 효과
+            resultDiv.innerHTML = '<span style="color: #FF6B6B;">🔄 마법을 부리는 중...</span>';
+            resultDiv.classList.add('show');
+            
+            // 반짝이는 효과 추가
+            createSparkles();
+            
+            setTimeout(() => {
+                fetch('/hello')
+                    .then(response => response.text())
+                    .then(data => {
+                        resultDiv.innerHTML = `
+                            <span class="heart">💖</span>
+                            ${data}
+                            <span class="heart">💖</span>
+                        `;
+                        
+                        // 성공 애니메이션
+                        resultDiv.style.background = 'linear-gradient(135deg, #FFE4E1, #FFD1DC, #F0E68C)';
+                        resultDiv.style.transform = 'scale(1.05)';
+                        setTimeout(() => {
+                            resultDiv.style.transform = 'scale(1)';
+                        }, 200);
+                    })
+                    .catch(error => {
+                        resultDiv.innerHTML = '🥺 연결에 실패했습니다...';
+                        resultDiv.style.background = 'linear-gradient(135deg, #FFB6C1, #FFA0B4)';
+                    });
+            }, 800);
+        }
+        
+        function createSparkles() {
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'sparkle';
+                    sparkle.style.left = Math.random() * window.innerWidth + 'px';
+                    sparkle.style.top = window.innerHeight + 'px';
+                    document.body.appendChild(sparkle);
+                    
+                    setTimeout(() => {
+                        sparkle.remove();
+                    }, 2000);
+                }, i * 200);
+            }
+        }
+        
+        // 페이지 로드시 웰컴 애니메이션
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('apiResult').classList.add('show');
+            }, 500);
+        });
+    </script>
 </body>
 </html>
