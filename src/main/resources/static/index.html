@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WhaleRay Test App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .status {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .links {
+            margin: 20px 0;
+        }
+        .links a {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px 10px 5px 0;
+        }
+        .links a:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐋 WhaleRay Spring Boot Application</h1>
+        
+        <div class="status">
+            <strong>✅ 배포 성공!</strong><br>
+            Spring Boot 애플리케이션이 정상적으로 실행 중입니다.
+        </div>
+        
+        <h3>사용 가능한 서비스:</h3>
+        <div class="links">
+            <a href="/h2-console">H2 Database Console</a>
+            <a href="/hello">Hello API</a>
+            <a href="/actuator/health">Health Check</a>
+        </div>
+        
+        <h3>애플리케이션 정보:</h3>
+        <ul>
+            <li>Framework: Spring Boot</li>
+            <li>Database: H2 In-Memory (jdbc:h2:mem:testdb)</li>
+            <li>Port: 8080</li>
+            <li>Environment: Production Ready</li>
+        </ul>
+        
+        <footer style="text-align: center; margin-top: 30px; color: #666;">
+            <small>Powered by WhaleRay Deployment System</small>
+        </footer>
+    </div>
+</body>
+</html>
