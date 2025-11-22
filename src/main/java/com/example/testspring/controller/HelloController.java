@@ -14,7 +14,7 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello(@RequestParam(defaultValue = "World") String name) {
-        return "가고 싶어요 사랑합니다";
+        return "가고 싶어요 사랑합니다 💖 行きたいです、愛しています 🌸";
     }
 
     @GetMapping("/health")
