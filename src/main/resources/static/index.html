@@ -183,23 +183,21 @@
     <div class="container">
         <div class="logo-section">
             <div class="softbank-logo">SoftBank</div>
-            <div style="font-size: 1.2rem; color: #666; margin: 10px 0;">ソフトバンク 💫 WhaleRay</div>
             <div class="whale-emoji">🐋</div>
         </div>
         
         <div class="status">
-            <strong>🎉 배포 완료! デプロイ成功!</strong><br>
-            WhaleRay 시스템이 성공적으로 실행 중입니다<br>
-            <small style="opacity: 0.8;">システムが正常に稼働しています 🚀</small>
+            <strong>🎉 Deployment Complete!</strong><br>
+            WhaleRay system is successfully running<br>
+            <small style="opacity: 0.8;">Thank you<br>ありがとう</small>
         </div>
         
         <button class="magic-button" onclick="callMagicAPI()">
-            ✨ 소프트뱅크 | ソフトバンク ✨
+            ✨ SoftBank ✨
         </button>
         
         <div class="result" id="apiResult">
-            버튼을 클릭해보세요! 🎯<br>
-            <small style="opacity: 0.7;">ボタンをクリックしてください!</small>
+            Click the button! 🎯
         </div>
         
         <div class="footer">
@@ -219,7 +217,7 @@
             }, 150);
             
             // 로딩 효과
-            resultDiv.innerHTML = '<span style="color: #FF6B6B;">🔄 마법을 부리는 중... 魔法をかけています...</span>';
+            resultDiv.innerHTML = '<span style="color: #FF6B6B;">🔄 Working magic...</span>';
             resultDiv.classList.add('show');
             
             // 반짝이는 효과 추가
@@ -243,7 +241,7 @@
                         }, 200);
                     })
                     .catch(error => {
-                        resultDiv.innerHTML = '🥺 연결에 실패했습니다...';
+                        resultDiv.innerHTML = '🥺 Connection failed...';
                         resultDiv.style.background = 'linear-gradient(135deg, #FFB6C1, #FFA0B4)';
                     });
             }, 800);
